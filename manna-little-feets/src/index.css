@@ -1,0 +1,160 @@
+/* ============================================================
+   MANNA LITTLE FEETS - LUMINOUS PASTEL LUXURY DESIGN SYSTEM
+   Base: White & Soft Cream with Radiant Light Pastel Accents
+   ============================================================ */
+
+:root {
+  --font-heading: 'Outfit', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-body: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+
+  /* Base Light Surfaces */
+  --bg-pure: #FFFFFF;
+  --bg-cream: #FAF9F6;
+  --bg-silk: #F8F7F4;
+
+  /* Radiant Light Pastel Accents (Luminous, Not Thick) */
+  --pastel-rose: #FFF1F5;
+  --pastel-rose-border: #FFD4E2;
+  --pastel-rose-text: #E03164;
+
+  --pastel-peach: #FFF5EE;
+  --pastel-peach-border: #FFDBC9;
+  --pastel-peach-text: #D9531E;
+
+  --pastel-honey: #FFFBEB;
+  --pastel-honey-border: #FDE68A;
+  --pastel-honey-text: #B45309;
+
+  --pastel-mint: #F0FDF4;
+  --pastel-mint-border: #BBF7D0;
+  --pastel-mint-text: #15803D;
+
+  --pastel-sky: #F0F9FF;
+  --pastel-sky-border: #BAE6FD;
+  --pastel-sky-text: #0284C7;
+
+  --pastel-lavender: #FAF5FF;
+  --pastel-lavender-border: #E9D5FF;
+  --pastel-lavender-text: #7E22CE;
+
+  /* Primary Brand Terracotta / Coral Accent */
+  --primary: #FF6B8B;
+  --primary-gradient: linear-gradient(135deg, #FF6B8B 0%, #FFA07A 50%, #FFB088 100%);
+  --primary-soft: #FFF0F3;
+  --primary-hover: #E85072;
+
+  /* Deep Charcoal for Crystal-Clear Typography */
+  --text-dark: #1E1B2E;
+  --text-body: #4E4A63;
+  --text-muted: #827E96;
+  --text-light: #B2AEC2;
+
+  /* Glassmorphism & Soft Glowing Shadows */
+  --border-subtle: #F0ECE6;
+  --border-glass: rgba(255, 255, 255, 0.85);
+
+  --shadow-sm: 0 4px 16px rgba(30, 27, 46, 0.04);
+  --shadow-glass: 0 16px 36px -6px rgba(255, 107, 139, 0.08), 0 6px 16px -2px rgba(186, 230, 253, 0.06);
+  --shadow-hover: 0 24px 48px -8px rgba(255, 107, 139, 0.15), 0 10px 24px -4px rgba(233, 213, 255, 0.1);
+  --shadow-glow: 0 8px 25px rgba(255, 107, 139, 0.28);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+}
+
+body {
+  font-family: var(--font-body);
+  background-color: var(--bg-pure);
+  color: var(--text-dark);
+  line-height: 1.65;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  /* Radiant Ambient Pastel Mesh Background on White Base */
+  background-image: 
+    radial-gradient(circle at 10% 15%, rgba(255, 225, 235, 0.6) 0%, transparent 35%),
+    radial-gradient(circle at 88% 25%, rgba(224, 242, 254, 0.6) 0%, transparent 40%),
+    radial-gradient(circle at 50% 60%, rgba(254, 249, 195, 0.4) 0%, transparent 45%),
+    radial-gradient(circle at 15% 85%, rgba(237, 233, 254, 0.5) 0%, transparent 40%),
+    radial-gradient(circle at 85% 90%, rgba(220, 252, 231, 0.5) 0%, transparent 40%);
+  background-attachment: fixed;
+}
+
+#root {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
+  color: var(--text-dark);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  transition: all 0.25s ease;
+}
+
+button {
+  font-family: var(--font-heading);
+  cursor: pointer;
+  border: none;
+  outline: none;
+}
+
+/* Animations */
+@keyframes softFloat {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  50% { transform: translateY(-10px) rotate(1.5deg); }
+}
+
+@keyframes softFloatRev {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  50% { transform: translateY(10px) rotate(-1.5deg); }
+}
+
+@keyframes gentleAura {
+  0%, 100% { transform: scale(1); opacity: 0.8; }
+  50% { transform: scale(1.04); opacity: 1; }
+}
+
+@keyframes footstepSoft {
+  0% { opacity: 0.75; transform: scale(0.85); }
+  100% { opacity: 0; transform: scale(1.15) translateY(-8px); }
+}
+
+.anim-float {
+  animation: softFloat 4.8s ease-in-out infinite;
+}
+
+.anim-float-rev {
+  animation: softFloatRev 5.2s ease-in-out infinite;
+}
+
+.anim-aura {
+  animation: gentleAura 3s ease-in-out infinite;
+}
+
+/* Custom Minimalist Scrollbar */
+::-webkit-scrollbar {
+  width: 9px;
+}
+::-webkit-scrollbar-track {
+  background: #FFFDFB;
+}
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #FFB4C8, #BAE6FD);
+  border-radius: 999px;
+  border: 2px solid #FFFDFB;
+}

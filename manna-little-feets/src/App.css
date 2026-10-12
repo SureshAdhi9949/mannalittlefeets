@@ -1,0 +1,1452 @@
+/* ============================================================
+   MANNA LITTLE FEETS - LUMINOUS PASTEL LUXURY CSS
+   Responsive for Desktop, Tablet, and Mobile
+   ============================================================ */
+
+/* Page Container */
+.page-container {
+  position: relative;
+  min-height: 100vh;
+  background-color: transparent;
+  overflow-x: hidden;
+}
+
+/* Mouse Footprint Tracer */
+.mouse-footprint-tracer {
+  position: fixed;
+  pointer-events: none;
+  z-index: 9999;
+  animation: footstepSoft 1.3s forwards cubic-bezier(0.16, 1, 0.3, 1);
+  transform-origin: center;
+}
+
+/* Luminous Top Bar */
+.luminous-top-bar {
+  background: rgba(255, 255, 255, 0.88);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(255, 212, 226, 0.4);
+  padding: 8px 16px;
+  font-size: 0.82rem;
+  color: var(--text-body);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  flex-wrap: wrap;
+  text-align: center;
+}
+
+.top-pill-badge {
+  background: linear-gradient(135deg, #FFF1F5 0%, #FFE4EC 100%);
+  color: #E03164;
+  border: 1px solid #FFD4E2;
+  padding: 3px 12px;
+  border-radius: 999px;
+  font-size: 0.76rem;
+  font-weight: 700;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+/* Header / Navbar */
+.luminous-navbar {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-bottom: 1px solid rgba(240, 236, 230, 0.8);
+  box-shadow: 0 4px 20px rgba(255, 107, 139, 0.04);
+}
+
+.nav-inner-container {
+  max-width: 1300px;
+  margin: 0 auto;
+  padding: 12px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.brand-anchor {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.brand-icon-box {
+  width: 44px;
+  height: 44px;
+  border-radius: 14px;
+  background: linear-gradient(135deg, #FFF1F5 0%, #FFE8F0 100%);
+  border: 1.5px solid #FFD4E2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 6px 16px rgba(255, 107, 139, 0.12);
+  transition: transform 0.25s ease;
+  flex-shrink: 0;
+}
+
+.brand-anchor:hover .brand-icon-box {
+  transform: rotate(-6deg) scale(1.06);
+}
+
+.brand-title-text {
+  font-family: var(--font-heading);
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: var(--text-dark);
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+}
+
+.brand-title-text span {
+  background: linear-gradient(135deg, #FF6B8B 0%, #FFA07A 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.brand-subtext {
+  font-size: 0.7rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.nav-links-wrap {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  list-style: none;
+}
+
+.nav-link-item {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--text-body);
+  position: relative;
+  padding: 6px 0;
+  transition: color 0.2s ease;
+}
+
+.nav-link-item:hover {
+  color: var(--primary);
+}
+
+.nav-link-item::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: linear-gradient(90deg, #FF6B8B, #FFA07A);
+  border-radius: 2px;
+  transition: width 0.25s ease;
+}
+
+.nav-link-item:hover::after {
+  width: 100%;
+}
+
+.nav-cta-group {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+/* Mobile Hamburger Button */
+.mobile-menu-trigger {
+  display: none;
+  background: #FFF1F5;
+  border: 1px solid #FFD4E2;
+  color: var(--primary);
+  width: 40px;
+  height: 40px;
+  border-radius: 12px;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.mobile-menu-trigger:hover {
+  background: #FFE4EC;
+}
+
+/* Mobile Dropdown Drawer */
+.mobile-dropdown-drawer {
+  display: none;
+  background: #FFFFFF;
+  border-bottom: 2px solid #FFD4E2;
+  padding: 16px 20px 24px;
+  flex-direction: column;
+  gap: 12px;
+  box-shadow: 0 12px 30px rgba(30, 27, 46, 0.08);
+}
+
+.mobile-nav-link {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--text-dark);
+  padding: 10px 4px;
+  border-bottom: 1px dashed #F0ECE6;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* Luminous Action Buttons */
+.btn-luminous-primary {
+  background: linear-gradient(135deg, #FF6B8B 0%, #FFA07A 100%);
+  color: #FFFFFF;
+  padding: 10px 22px;
+  border-radius: 999px;
+  font-size: 0.9rem;
+  font-weight: 700;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  box-shadow: 0 6px 20px rgba(255, 107, 139, 0.3);
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  white-space: nowrap;
+}
+
+.btn-luminous-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(255, 107, 139, 0.4);
+}
+
+.btn-luminous-ghost {
+  background: #FFFFFF;
+  color: var(--text-dark);
+  border: 1.5px solid #F0ECE6;
+  padding: 10px 18px;
+  border-radius: 999px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
+  transition: all 0.2s ease;
+  white-space: nowrap;
+}
+
+.btn-luminous-ghost:hover {
+  border-color: #FFB4C8;
+  color: var(--primary);
+  background: #FFF9FA;
+  transform: translateY(-2px);
+}
+
+.btn-icon-soft {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: #FFFFFF;
+  border: 1.5px solid #F0ECE6;
+  color: var(--text-muted);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03);
+  flex-shrink: 0;
+}
+
+.btn-icon-soft:hover {
+  color: var(--primary);
+  border-color: #FFB4C8;
+  background: #FFF1F5;
+  transform: scale(1.06);
+}
+
+/* Hero Section */
+.hero-luminous-section {
+  position: relative;
+  padding: 56px 20px 72px;
+}
+
+.hero-two-col-grid {
+  max-width: 1300px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  align-items: center;
+  gap: 48px;
+}
+
+.hero-sparkle-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: linear-gradient(135deg, #FFF1F5 0%, #FFF5EE 100%);
+  border: 1.5px solid #FFD4E2;
+  padding: 6px 18px;
+  border-radius: 999px;
+  font-size: 0.84rem;
+  font-weight: 700;
+  color: #E03164;
+  margin-bottom: 20px;
+  box-shadow: 0 4px 12px rgba(255, 107, 139, 0.1);
+}
+
+.hero-headline-title {
+  font-size: 3.5rem;
+  line-height: 1.14;
+  font-weight: 700;
+  color: var(--text-dark);
+  margin-bottom: 20px;
+  letter-spacing: -0.03em;
+}
+
+.hero-headline-title .gradient-text {
+  background: linear-gradient(135deg, #FF6B8B 0%, #FFA07A 50%, #C084FC 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  display: inline;
+}
+
+.hero-lead-paragraph {
+  font-size: 1.12rem;
+  color: var(--text-body);
+  line-height: 1.7;
+  margin-bottom: 30px;
+  max-width: 600px;
+}
+
+.hero-actions-row {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  flex-wrap: wrap;
+  margin-bottom: 36px;
+}
+
+/* Sensory Micro Cards in Hero */
+.hero-sensory-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+  padding-top: 18px;
+  border-top: 1px dashed #EAE5DC;
+}
+
+.sensory-card-mini {
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 16px;
+  padding: 12px;
+  border: 1px solid #F0ECE6;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.02);
+  transition: all 0.25s ease;
+  cursor: pointer;
+}
+
+.sensory-card-mini:hover {
+  transform: translateY(-3px);
+  border-color: #FFB4C8;
+  box-shadow: 0 8px 20px rgba(255, 107, 139, 0.12);
+}
+
+.sensory-mini-icon {
+  width: 32px;
+  height: 32px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1rem;
+  margin-bottom: 6px;
+}
+
+.sensory-card-mini h6 {
+  font-size: 0.82rem;
+  margin-bottom: 2px;
+  color: var(--text-dark);
+}
+
+.sensory-card-mini span {
+  font-size: 0.72rem;
+  color: var(--text-muted);
+}
+
+/* Hero Visual Showcase */
+.hero-visual-container {
+  position: relative;
+  background: #FFFFFF;
+  border-radius: 36px;
+  padding: 14px;
+  border: 2px solid rgba(255, 255, 255, 0.9);
+  box-shadow: var(--shadow-glass);
+}
+
+.hero-visual-frame {
+  position: relative;
+  height: 480px;
+  border-radius: 28px;
+  overflow: hidden;
+}
+
+.hero-visual-photo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s ease;
+}
+
+.hero-visual-container:hover .hero-visual-photo {
+  transform: scale(1.03);
+}
+
+/* Luminous Floating Badges on Hero */
+.luminous-floating-badge {
+  position: absolute;
+  background: rgba(255, 255, 255, 0.96);
+  backdrop-filter: blur(12px);
+  border-radius: 20px;
+  padding: 10px 16px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  box-shadow: 0 12px 30px rgba(30, 27, 46, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.9);
+  z-index: 10;
+}
+
+.badge-pos-top-right {
+  top: 24px;
+  right: -16px;
+}
+
+.badge-pos-bottom-left {
+  bottom: 24px;
+  left: -16px;
+}
+
+.badge-icon-disc {
+  width: 38px;
+  height: 38px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.1rem;
+}
+
+/* Section Header Common */
+.section-wrapper-luminous {
+  padding: 80px 20px;
+  position: relative;
+}
+
+.section-kicker-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 5px 14px;
+  border-radius: 999px;
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  margin-bottom: 12px;
+}
+
+.section-heading-lg {
+  font-size: 2.5rem;
+  line-height: 1.2;
+  color: var(--text-dark);
+  margin-bottom: 14px;
+  letter-spacing: -0.02em;
+}
+
+.section-subheading-lead {
+  font-size: 1.05rem;
+  color: var(--text-body);
+  line-height: 1.7;
+}
+
+/* Interactive Wonderlands Explorer */
+.wonderland-tabs-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-bottom: 38px;
+}
+
+.wonderland-pill-tab {
+  background: #FFFFFF;
+  border: 1.5px solid #F0ECE6;
+  padding: 11px 20px;
+  border-radius: 999px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--text-body);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.02);
+  transition: all 0.25s ease;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.wonderland-pill-tab:hover {
+  transform: translateY(-2px);
+  border-color: #FFB4C8;
+  color: var(--primary);
+}
+
+.wonderland-pill-tab.active {
+  background: linear-gradient(135deg, #FF6B8B 0%, #FFA07A 100%);
+  color: #FFFFFF;
+  border-color: transparent;
+  box-shadow: 0 8px 20px rgba(255, 107, 139, 0.3);
+  transform: translateY(-2px);
+}
+
+.wonderland-showcase-card {
+  max-width: 1240px;
+  margin: 0 auto;
+  background: rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(16px);
+  border-radius: 32px;
+  border: 1.5px solid rgba(255, 255, 255, 0.9);
+  box-shadow: var(--shadow-glass);
+  overflow: hidden;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+}
+
+.wonderland-img-frame {
+  position: relative;
+  height: 480px;
+  overflow: hidden;
+}
+
+.wonderland-photo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.wonderland-showcase-card:hover .wonderland-photo {
+  transform: scale(1.04);
+}
+
+.wonderland-age-pill {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(8px);
+  color: var(--text-dark);
+  padding: 6px 16px;
+  border-radius: 999px;
+  font-size: 0.82rem;
+  font-weight: 700;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
+}
+
+.wonderland-info-pane {
+  padding: 44px;
+}
+
+.wonderland-title-text {
+  font-size: 2rem;
+  color: var(--text-dark);
+  margin-bottom: 12px;
+}
+
+.wonderland-desc-text {
+  font-size: 1rem;
+  color: var(--text-body);
+  line-height: 1.7;
+  margin-bottom: 24px;
+}
+
+.wonderland-features-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  margin-bottom: 30px;
+}
+
+.feature-pill-chip {
+  background: rgba(255, 255, 255, 0.85);
+  border: 1px solid #F0ECE6;
+  padding: 10px 14px;
+  border-radius: 14px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--text-dark);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* Smart Shoe & Milestone Studio */
+.shoe-studio-glass-box {
+  max-width: 1140px;
+  margin: 0 auto 52px;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(16px);
+  border-radius: 32px;
+  border: 1.5px solid rgba(255, 255, 255, 0.9);
+  box-shadow: var(--shadow-glass);
+  padding: 44px;
+}
+
+.shoe-studio-grid {
+  display: grid;
+  grid-template-columns: 1.05fr 0.95fr;
+  gap: 48px;
+  align-items: stretch;
+}
+
+.shoe-studio-controls {
+  display: flex;
+  flex-direction: column;
+}
+
+.shoe-age-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 14px;
+}
+
+.shoe-control-label {
+  font-weight: 700;
+  color: #1E1B2E;
+  font-size: 0.96rem;
+  display: block;
+}
+
+.shoe-control-sublabel {
+  font-size: 0.78rem;
+  color: #827E96;
+  display: block;
+  margin-top: 2px;
+}
+
+.shoe-age-badge-wrap {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.shoe-age-stepper-btn {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  border: 1px solid #FFD4E2;
+  background: #FFF1F5;
+  color: #E03164;
+  font-size: 1.15rem;
+  font-weight: 800;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  line-height: 1;
+}
+
+.shoe-age-stepper-btn:hover {
+  background: #FFE4EC;
+  transform: scale(1.08);
+}
+
+.shoe-age-pill-val {
+  background: #FFF1F5;
+  color: #E03164;
+  border: 1px solid #FFD4E2;
+  padding: 6px 16px;
+  border-radius: 999px;
+  font-weight: 800;
+  font-size: 0.95rem;
+  white-space: nowrap;
+}
+
+.interactive-range-slider {
+  width: 100%;
+  height: 9px;
+  border-radius: 999px;
+  background: #EFE9E2;
+  outline: none;
+  -webkit-appearance: none;
+  appearance: none;
+  accent-color: #FF6B8B;
+  cursor: pointer;
+  margin-bottom: 12px;
+}
+
+.interactive-range-slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: #FF6B8B;
+  border: 3px solid #FFFFFF;
+  box-shadow: 0 2px 8px rgba(255, 107, 139, 0.4);
+  cursor: pointer;
+  transition: transform 0.15s ease;
+}
+
+.interactive-range-slider::-webkit-slider-thumb:hover {
+  transform: scale(1.15);
+}
+
+.shoe-quick-milestones {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-bottom: 24px;
+}
+
+.shoe-milestone-chip {
+  background: #F8F6F3;
+  border: 1px solid #EAE5DC;
+  color: #6C665F;
+  padding: 5px 12px;
+  border-radius: 999px;
+  font-size: 0.8rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.shoe-milestone-chip:hover {
+  background: #FFF1F5;
+  border-color: #FFB4C8;
+  color: #E03164;
+}
+
+.shoe-milestone-chip.active {
+  background: #FF6B8B;
+  border-color: #FF6B8B;
+  color: #FFFFFF;
+  box-shadow: 0 4px 12px rgba(255, 107, 139, 0.25);
+}
+
+.shoe-profile-selector-wrap {
+  margin-bottom: 24px;
+}
+
+.shoe-profile-btn-group {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.shoe-profile-btn {
+  background: #FFFFFF;
+  border: 1.5px solid #F0ECE6;
+  padding: 10px 16px;
+  border-radius: 14px;
+  font-size: 0.86rem;
+  font-weight: 600;
+  color: #4E4A63;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  text-align: center;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.02);
+}
+
+.shoe-profile-btn:hover {
+  border-color: #FFB4C8;
+  color: #E03164;
+  transform: translateY(-1px);
+}
+
+.shoe-profile-btn.active {
+  background: linear-gradient(135deg, #FF6B8B 0%, #FFA07A 100%);
+  color: #FFFFFF;
+  border-color: transparent;
+  box-shadow: 0 6px 16px rgba(255, 107, 139, 0.25);
+  font-weight: 700;
+  transform: translateY(-1px);
+}
+
+/* Foot Silhouette Visualizer */
+.foot-silhouette-visualizer {
+  background: linear-gradient(135deg, #FFF1F5 0%, #FFF5EE 100%);
+  border-radius: 24px;
+  border: 1.5px solid #FFD4E2;
+  padding: 24px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 8px 20px rgba(255, 107, 139, 0.06);
+  margin-top: auto;
+}
+
+.foot-visualizer-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.foot-scale-badge {
+  font-size: 0.76rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: #D9531E;
+}
+
+.foot-cm-highlight {
+  background: #FFFFFF;
+  padding: 3px 10px;
+  border-radius: 999px;
+  font-size: 0.78rem;
+  font-weight: 800;
+  color: #E03164;
+  border: 1px solid #FFD4E2;
+}
+
+.foot-scale-box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 120px;
+  margin: 6px 0 10px;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.foot-length-caption {
+  font-size: 0.82rem;
+  color: #57524C;
+  margin: 0;
+}
+
+/* Sizing Specification Result Card */
+.shoe-studio-result-card {
+  background: #FFFFFF;
+  border-radius: 28px;
+  padding: 36px;
+  border: 1.5px solid #FFD4E2;
+  box-shadow: 0 12px 36px rgba(255, 107, 139, 0.09);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.result-kicker-tag {
+  display: inline-flex;
+  padding: 4px 14px;
+  border-radius: 999px;
+  background: #FFF1F5;
+  color: #E03164;
+  font-size: 0.76rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.shoe-size-display-wrap {
+  display: flex;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 12px 0 14px;
+}
+
+.shoe-primary-size {
+  font-size: 3rem;
+  font-family: var(--font-heading);
+  font-weight: 800;
+  color: #1E1B2E;
+  line-height: 1;
+}
+
+.shoe-secondary-sizes {
+  font-size: 1.25rem;
+  color: #827E96;
+  font-weight: 600;
+}
+
+.shoe-pediatric-info-card {
+  background: #FFFDF9;
+  padding: 18px 20px;
+  border-radius: 18px;
+  border: 1px solid #F0ECE6;
+  margin-bottom: 22px;
+}
+
+.shoe-stage-title {
+  font-size: 1rem;
+  color: #1E1B2E;
+  margin-bottom: 6px;
+  font-weight: 700;
+}
+
+.shoe-pediatric-tip {
+  font-size: 0.86rem;
+  color: #4E4A63;
+  margin: 0;
+  line-height: 1.55;
+}
+
+.shoe-inquire-cta {
+  width: 100%;
+  justify-content: center;
+}
+
+/* Birthday Celebration Builder */
+.birthday-builder-glass-box {
+  max-width: 1140px;
+  margin: 0 auto;
+  background: #FFFFFF;
+  border-radius: 32px;
+  border: 1.5px solid rgba(255, 255, 255, 0.9);
+  box-shadow: var(--shadow-glass);
+  overflow: hidden;
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+}
+
+.builder-inputs-pane {
+  padding: 44px;
+}
+
+.theme-selector-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  margin-bottom: 24px;
+}
+
+.theme-pill-card {
+  background: #FFFFFF;
+  border: 1.5px solid #F0ECE6;
+  border-radius: 16px;
+  padding: 12px 14px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  transition: all 0.2s ease;
+}
+
+.theme-pill-card:hover {
+  border-color: #FFB4C8;
+  transform: translateY(-2px);
+}
+
+.theme-pill-card.selected {
+  border-color: var(--primary);
+  background: #FFF5F7;
+  box-shadow: 0 4px 14px rgba(255, 107, 139, 0.15);
+}
+
+.addon-toggle-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #FAFAFA;
+  border: 1px solid #F0ECE6;
+  padding: 12px 16px;
+  border-radius: 14px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  margin-bottom: 8px;
+}
+
+.addon-toggle-row:hover {
+  background: #FFF9FA;
+  border-color: #FFD4E2;
+}
+
+.addon-toggle-row.checked {
+  background: #FFF1F5;
+  border-color: #FFB4C8;
+}
+
+.builder-pricing-summary-pane {
+  background: linear-gradient(135deg, #1E1B2E 0%, #2D2744 100%);
+  color: #FFFFFF;
+  padding: 44px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/* Boutique Grid */
+.boutique-grid-four {
+  max-width: 1280px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+}
+
+.boutique-item-card {
+  background: #FFFFFF;
+  border-radius: 22px;
+  border: 1.5px solid #F0ECE6;
+  overflow: hidden;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.03);
+  transition: all 0.3s ease;
+  display: flex;
+  flex-direction: column;
+}
+
+.boutique-item-card:hover {
+  transform: translateY(-6px);
+  border-color: #FFB4C8;
+  box-shadow: var(--shadow-glass);
+}
+
+.boutique-img-frame {
+  height: 220px;
+  position: relative;
+  overflow: hidden;
+  background: #FFF9FA;
+}
+
+.boutique-photo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.boutique-item-card:hover .boutique-photo {
+  transform: scale(1.06);
+}
+
+/* Safety Bento Grid */
+.safety-bento-six {
+  max-width: 1280px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.safety-tile-card {
+  background: #FFFFFF;
+  border-radius: 24px;
+  border: 1.5px solid #F0ECE6;
+  padding: 32px 26px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.02);
+  transition: all 0.25s ease;
+}
+
+.safety-tile-card:hover {
+  transform: translateY(-5px);
+  border-color: #FFB4C8;
+  box-shadow: var(--shadow-glass);
+}
+
+.safety-badge-icon {
+  width: 48px;
+  height: 48px;
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 18px;
+}
+
+/* Reviews Grid */
+.reviews-three-grid {
+  max-width: 1280px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.review-quote-box {
+  background: #FFFFFF;
+  border-radius: 24px;
+  border: 1.5px solid #F0ECE6;
+  padding: 32px 26px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.02);
+  display: flex;
+  flex-direction: column;
+  transition: all 0.25s ease;
+}
+
+.review-quote-box:hover {
+  transform: translateY(-5px);
+  border-color: #FFB4C8;
+  box-shadow: var(--shadow-glass);
+}
+
+/* Footer */
+.luminous-footer {
+  background: #181524;
+  color: #A6A2B8;
+  padding: 64px 20px 32px;
+  border-top: 1px solid #2B263E;
+}
+
+.footer-four-col {
+  max-width: 1280px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1.4fr 1fr 1fr 1.2fr;
+  gap: 44px;
+  padding-bottom: 44px;
+  border-bottom: 1px solid #2B263E;
+}
+
+/* Modal */
+.modal-scrim-layer {
+  position: fixed;
+  inset: 0;
+  background: rgba(24, 21, 36, 0.65);
+  backdrop-filter: blur(10px);
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+}
+
+.modal-content-panel {
+  background: #FFFFFF;
+  border-radius: 28px;
+  border: 1.5px solid rgba(255, 255, 255, 0.9);
+  max-width: 560px;
+  width: 100%;
+  padding: 32px;
+  position: relative;
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.25);
+  max-height: 90vh;
+  overflow-y: auto;
+}
+
+/* Floating WhatsApp Concierge Pill */
+.floating-whatsapp-pill-vibrant {
+  position: fixed;
+  bottom: 22px;
+  right: 22px;
+  z-index: 99;
+  background: linear-gradient(135deg, #25D366 0%, #128C7E 100%);
+  color: #FFFFFF;
+  padding: 12px 20px;
+  border-radius: 999px;
+  box-shadow: 0 8px 25px rgba(37, 211, 102, 0.4);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: 700;
+  font-size: 0.9rem;
+  transition: all 0.25s ease;
+}
+
+.floating-whatsapp-pill-vibrant:hover {
+  transform: translateY(-3px) scale(1.03);
+  box-shadow: 0 12px 30px rgba(37, 211, 102, 0.55);
+}
+
+/* ============================================================
+   RESPONSIVE BREAKPOINTS (Desktop, Tablet, Mobile)
+   ============================================================ */
+
+@media (max-width: 1024px) {
+  .hero-two-col-grid {
+    grid-template-columns: 1fr;
+    text-align: center;
+    gap: 40px;
+  }
+
+  .hero-headline-title {
+    font-size: 2.8rem;
+  }
+
+  .hero-lead-paragraph {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .hero-actions-row {
+    justify-content: center;
+  }
+
+  .hero-sensory-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .wonderland-showcase-card {
+    grid-template-columns: 1fr;
+  }
+
+  .wonderland-img-frame {
+    height: 320px;
+  }
+
+  .wonderland-info-pane {
+    padding: 32px;
+  }
+
+  .shoe-studio-grid {
+    grid-template-columns: 1fr;
+    gap: 36px;
+  }
+
+  .birthday-builder-glass-box {
+    grid-template-columns: 1fr;
+  }
+
+  .boutique-grid-four {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .safety-bento-six {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .reviews-three-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .footer-four-col {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  /* Mobile View: Place Hero Image on TOP */
+  .hero-two-col-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+  }
+
+  .hero-visual-container {
+    order: -1; /* Hero image at the TOP in mobile view */
+    width: 100%;
+  }
+
+  .hero-text-content {
+    order: 1;
+    width: 100%;
+  }
+
+  .nav-links-wrap, .nav-cta-group .btn-luminous-ghost, .nav-cta-group .btn-luminous-primary {
+    display: none;
+  }
+
+  .mobile-menu-trigger {
+    display: flex;
+  }
+
+  .mobile-dropdown-drawer {
+    display: flex;
+  }
+
+  .hero-headline-title {
+    font-size: 2.25rem;
+  }
+
+  .hero-visual-frame {
+    height: 320px;
+  }
+
+  .hero-sensory-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+  }
+
+  .boutique-grid-four {
+    grid-template-columns: 1fr;
+  }
+
+  .safety-bento-six {
+    grid-template-columns: 1fr;
+  }
+
+  .footer-four-col {
+    grid-template-columns: 1fr;
+  }
+
+  /* Mobile Specific Styles for Smart Pediatric Measurement Studio */
+  .shoe-studio-glass-box {
+    padding: 18px 14px;
+    border-radius: 24px;
+    margin: 0 auto 36px;
+  }
+
+  .shoe-studio-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .shoe-age-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+    margin-bottom: 12px;
+  }
+
+  .shoe-age-badge-wrap {
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .shoe-age-pill-val {
+    flex-grow: 1;
+    text-align: center;
+    font-size: 0.88rem;
+    padding: 6px 12px;
+  }
+
+  .interactive-range-slider {
+    margin-bottom: 14px;
+  }
+
+  .shoe-quick-milestones {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 4px;
+    width: 100%;
+    margin-bottom: 18px;
+  }
+
+  .shoe-milestone-chip {
+    padding: 7px 0;
+    text-align: center;
+    font-size: 0.74rem;
+  }
+
+  .shoe-profile-selector-wrap {
+    margin-bottom: 18px;
+  }
+
+  .shoe-profile-btn-group {
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+  }
+
+  .shoe-profile-btn {
+    padding: 10px 8px;
+    font-size: 0.78rem;
+    white-space: normal;
+    line-height: 1.25;
+  }
+
+  .foot-silhouette-visualizer {
+    padding: 16px 14px;
+    border-radius: 18px;
+    margin-top: 0;
+  }
+
+  .foot-scale-box {
+    height: 75px;
+    margin: 4px 0 6px;
+  }
+
+  .foot-length-caption {
+    font-size: 0.78rem;
+  }
+
+  .shoe-studio-result-card {
+    padding: 20px 16px;
+    border-radius: 20px;
+  }
+
+  .shoe-size-display-wrap {
+    margin: 10px 0 12px;
+    gap: 6px;
+    align-items: baseline;
+  }
+
+  .shoe-primary-size {
+    font-size: 2.15rem;
+  }
+
+  .shoe-secondary-sizes {
+    font-size: 0.98rem;
+  }
+
+  .shoe-pediatric-info-card {
+    padding: 14px 14px;
+    border-radius: 14px;
+    margin-bottom: 16px;
+  }
+
+  .shoe-stage-title {
+    font-size: 0.94rem;
+    margin-bottom: 4px;
+  }
+
+  .shoe-pediatric-tip {
+    font-size: 0.82rem;
+    line-height: 1.5;
+  }
+
+  .shoe-inquire-cta {
+    padding: 12px 14px;
+    font-size: 0.88rem;
+  }
+
+  .builder-inputs-pane {
+    padding: 22px;
+  }
+
+  .builder-pricing-summary-pane {
+    padding: 28px 22px;
+  }
+
+  .modal-content-panel {
+    padding: 24px 18px;
+  }
+
+  .floating-whatsapp-pill-vibrant {
+    bottom: 16px;
+    right: 16px;
+    padding: 10px 16px;
+    font-size: 0.85rem;
+  }
+}
+
+@media (max-width: 400px) {
+  .shoe-milestone-chip {
+    font-size: 0.7rem;
+    padding: 5px 0;
+  }
+
+  .shoe-primary-size {
+    font-size: 1.95rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .badge-pos-top-right {
+    top: 14px;
+    right: 10px;
+  }
+
+  .badge-pos-bottom-left {
+    bottom: 14px;
+    left: 10px;
+  }
+
+  .luminous-floating-badge {
+    padding: 8px 12px;
+  }
+
+  .theme-selector-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .wonderland-features-grid {
+    grid-template-columns: 1fr;
+  }
+}
